@@ -9,7 +9,6 @@ Source0:	http://www.prato.linux.it/~mnencia/lexmark2050/%{name}-%{version}.tar.g
 Patch0:		c2050-0.3-looplimits.patch
 Conflicts:	printer-utils = 2007
 Conflicts:	printer-filters = 2007
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 Lexmark 2050 Color Jetprinter printer driver.
