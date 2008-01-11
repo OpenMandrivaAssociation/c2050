@@ -1,7 +1,7 @@
 Summary:	Driver for the Lexmark 2050 printer
 Name:		c2050
 Version:	0.4
-Release:	%mkrel 4
+Release:	%mkrel 5
 Group:		System/Printing
 License:	GPL
 URL:		http://www.prato.linux.it/~mnencia/lexmark2050
