@@ -1,0 +1,29 @@
+--- c2050.c	2003-05-25 17:23:15.000000000 +0200
++++ c2050.c.oden	2008-12-24 23:46:29.000000000 +0100
+@@ -129,7 +129,7 @@ int ReduceBytes(char *buffer, int bytesp
+   register int redleft = 0; 
+   register int redright = 0; 
+   int bstart = 0;
+-  while ((buffer[redleft] == 0) && (redleft < *bytesize)) redleft++;
++  while ((redleft < *bytesize) && (buffer[redleft] == 0)) redleft++;
+   while ((buffer[*bytesize - 1 - redright] == 0) && 
+ 	 (redright < *bytesize)) redright++;
+   *breite -= redleft / bytespercolumn + redright / bytespercolumn;
+@@ -166,7 +166,7 @@ void PrintSweep(char *buffer, char *head
+ 
+   if (width > 0) { /* do not print empty sweeps */
+     for(i=0; i<BYTES_PER_HEADER; i++) putc(header[i], out);
+-    for(i=0; i<(bytesize);i++) putc(buffer[i+bstart], out);
++    for(i=0; i<(width);i++) putc(buffer[i+bstart], out);
+   }
+ } /* PrintSweep */	
+ 
+@@ -299,7 +299,7 @@ void LexPrint(FILE *in, FILE *out) {
+ 
+ 	  /* This extracts the nibbles and transforms them to the bits
+ 	     in the output stream. */
+-	  for(i=0; (i <= blkwidth); i++)
++	  for(i=0; (i < blkwidth); i++)
+ 	    {                              
+ 	      nibble = (line[i/2] << (4 * (i % 2))) & 0xF0;
+ 	
