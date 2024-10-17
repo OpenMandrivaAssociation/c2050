@@ -4,7 +4,7 @@ Version:	0.4
 Release:	25
 Group:		System/Printing
 License:	GPL
-URL:		http://www.prato.linux.it/~mnencia/lexmark2050
+URL:		https://www.prato.linux.it/~mnencia/lexmark2050
 Source0:	http://www.prato.linux.it/~mnencia/lexmark2050/%{name}-%{version}.tar.gz
 Patch0:		c2050-0.3-looplimits.patch
 Conflicts:	printer-utils = 2007
